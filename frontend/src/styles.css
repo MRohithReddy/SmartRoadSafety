@@ -1,0 +1,162 @@
+:root {
+  --bg: #f3f6f8;
+  --panel: #ffffff;
+  --text: #102a43;
+  --muted: #486581;
+  --primary: #0f8b8d;
+  --danger: #c1121f;
+  --safe: #1b9e3c;
+  --moderate: #df9f00;
+  --risk: #cc2d3f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #e8f1f2 0%, var(--bg) 65%);
+  color: var(--text);
+}
+
+.app {
+  width: min(1200px, 96vw);
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.controls label,
+.panel label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+input,
+select,
+button {
+  padding: 8px 10px;
+  border: 1px solid #bcccdc;
+  border-radius: 8px;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.road-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.road {
+  border-left: 8px solid transparent;
+  background: #f8fbfc;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.road.green {
+  border-left-color: var(--safe);
+}
+
+.road.yellow {
+  border-left-color: var(--moderate);
+}
+
+.road.red {
+  border-left-color: var(--risk);
+}
+
+.route-card {
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.route-card.safest {
+  background: #e9f8f0;
+}
+
+.route-card.fastest {
+  background: #edf2ff;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sos {
+  background: var(--danger);
+}
+
+.alert {
+  margin-top: 10px;
+  background: #fff4f4;
+  border: 1px solid #f0b1b1;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.status {
+  margin-top: 8px;
+  color: #334e68;
+}
+
+.map-wrap {
+  margin-top: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .actions {
+    flex-direction: column;
+  }
+}
