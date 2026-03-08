@@ -1,3 +1,4 @@
+//just a random comment
 const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 async function post(path, payload) {
