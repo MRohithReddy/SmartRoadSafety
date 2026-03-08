@@ -3,7 +3,6 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
-#has all the business logic
 
 class Coordinate(BaseModel):
     lat: float
